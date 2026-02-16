@@ -11,7 +11,6 @@ TIME = '2026-02-02T02:00:00'
 
 ds = xr.open_dataset('ee55fbf506dcf538ff0520dd455676d5.nc')
 
-# Extract wind snapshot once
 u_field = ds['u10'].values
 v_field = ds['v10'].values
 
@@ -59,7 +58,6 @@ def interp_bilinear(field, lat, lon, lat0, lon0, dlat, dlon, nlat, nlon):
         i0 = int(np.floor(i))
         j0 = int(np.floor(j))
 
-        # Clamp bounds
         if i0 < 0:
             i0 = 0
         if i0 > nlat - 2:
@@ -91,7 +89,7 @@ def interp_bilinear(field, lat, lon, lat0, lon0, dlat, dlon, nlat, nlon):
 # =========================
 
 
-dt = 3600  # 1 hour timestep
+dt = 36000
 steps = 1000
 
 u_field = u_field[0]

@@ -1,7 +1,7 @@
 import cdsapi
 
 url= "https://cds.climate.copernicus.eu/api"
-key= "f4a1470f-76fc-430d-adb6-656b93c412ef"
+key= ""
 
 client = cdsapi.Client(url=url, key=key)
 
